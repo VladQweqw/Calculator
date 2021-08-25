@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+html {scroll-behavior: smooth;}
+body {
+    background-image: url(mesh2.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    color: white;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.bg {
+    background-color: rgb(174, 0, 255);
+    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.container {
+    background-color: rgba(255,255,255,.15);
+    backdrop-filter: blut(5px);
+    border-radius: 12px;
+    width: 400px;
+    display: grid;
+    position: relative;
+    margin: 0 10px;
+}
+.display {
+    width: auto;
+    padding-top: 20px;
+    height: 6rem;
+    border-bottom: 2px solid white;
+    font-size: 40px;
+    text-align: center;
+    user-select: none;
+
+}
+.numbers {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: auto;
+    text-align: center;
+}
+#enter {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-end: 5;
+    grid-column-start: 4;}
+.number {
+    cursor: pointer;
+    user-select: none;  
+    padding: 40px 0;
+    position: relative;
+}
+.number:before {
+    content: ""; 
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-left: 0px solid white;
+    border-top: 0px solid white;
+    transition: 400ms ease-in-out;
+    top: 0;
+    left: 0;
+
+}
+#enter {
+    padding: 80px 0;
+    
+}
+.number::after {
+    content: ""; 
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-right: 0px solid white;
+    border-bottom: 0px solid white;
+    transition: 400ms ease-in-out;
+    bottom: 0;
+    right: 0;
+  
+}
+.number:hover::before {
+    width: 99%;
+    height: 99%;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+.number:hover::after {
+    width: 99%;
+    height:99%;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+@media (max-width:400px) {
+    .container {
+        width: 95%;
+    }
+    .number {
+        padding: 30px 0;
+    }
+}
